@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { api } from '../../services/api';
-import { DemoBanner, LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
+import { LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
 import { EvidenceList } from '../../components/investigation/EvidenceList';
 import clsx from 'clsx';
 
@@ -42,8 +42,6 @@ export function EvidencePage() {
 
   return (
     <div className="p-6 space-y-4">
-      <DemoBanner />
-
       <Panel
         title={`Evidence Chain (${items.length})`}
         action={

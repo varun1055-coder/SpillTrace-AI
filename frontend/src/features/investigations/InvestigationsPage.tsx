@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { api } from '../../services/api';
-import { DemoBanner, LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
+import { LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
 import { Badge, statusVariant } from '../../components/ui/Badge';
 
 export function InvestigationsPage() {
@@ -12,7 +12,6 @@ export function InvestigationsPage() {
 
   return (
     <div className="p-6 space-y-4">
-      <DemoBanner />
       <Panel title={`Investigations (${data?.total ?? 0})`}>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">

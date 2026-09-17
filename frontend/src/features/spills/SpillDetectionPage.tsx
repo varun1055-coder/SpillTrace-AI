@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { api } from '../../services/api';
-import { DemoBanner, LoadingState, ErrorState, Panel, ScoreBar } from '../../components/ui/Panel';
+import { LoadingState, ErrorState, Panel, ScoreBar } from '../../components/ui/Panel';
 import { Badge } from '../../components/ui/Badge';
 import { SarPreview } from '../../components/investigation/SarPreview';
 import type { SpillEvent } from '../../types';
@@ -52,8 +52,6 @@ export function SpillDetectionPage() {
 
   return (
     <div className="p-6 space-y-4">
-      <DemoBanner />
-
       <div className="grid grid-cols-1 xl:grid-cols-5 gap-4">
         {/* Left: SAR preview */}
         <Panel

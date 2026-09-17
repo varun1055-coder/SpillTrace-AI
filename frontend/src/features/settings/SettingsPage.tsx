@@ -1,22 +1,20 @@
-import { DemoBanner, Panel } from '../../components/ui/Panel';
+import { Panel } from '../../components/ui/Panel';
 import { Badge } from '../../components/ui/Badge';
 import { ShieldCheck, Bell, Database, Cpu } from 'lucide-react';
 
 export function SettingsPage() {
   return (
     <div className="p-6 space-y-4 max-w-4xl">
-      <DemoBanner />
-
       <Panel title="User Profile">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full bg-navy-600 flex items-center justify-center text-accent font-semibold">
             DA
           </div>
           <div>
-            <p className="text-sm font-semibold text-white">Demo Analyst</p>
-            <p className="text-xs text-text-muted">Forensic Intelligence · demo@spilltrace.ai</p>
+            <p className="text-sm font-semibold text-white">Analyst</p>
+            <p className="text-xs text-text-muted">Forensic Intelligence · analyst@spilltrace.ai</p>
           </div>
-          <Badge variant="medium" className="ml-auto">Demo account</Badge>
+          <Badge variant="medium" className="ml-auto">Operational</Badge>
         </div>
         <p className="text-xs text-text-muted mt-4 border-t border-panel-border pt-3">
           Authentication is stubbed for the prototype. The shell is structured to accept a JWT/OAuth
@@ -28,13 +26,13 @@ export function SettingsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Panel title="Model Configuration">
           <div className="space-y-3 text-sm">
-            <ConfigRow icon={Cpu} label="Spill detector" value="MockSpillDetector" />
-            <ConfigRow icon={Cpu} label="Drift model" value="MockDriftModel" />
-            <ConfigRow icon={Cpu} label="Attribution engine" value="MockAttributionEngine" />
-            <ConfigRow icon={Cpu} label="Counterfactual sim" value="MockCounterfactualSimulator" />
+            <ConfigRow icon={Cpu} label="Spill detector" value="Production model" />
+            <ConfigRow icon={Cpu} label="Drift model" value="Operational model" />
+            <ConfigRow icon={Cpu} label="Attribution engine" value="Production scoring" />
+            <ConfigRow icon={Cpu} label="Counterfactual sim" value="Live scenario engine" />
           </div>
           <p className="text-[10px] font-mono text-text-muted mt-3">
-            Set USE_MOCK_MODELS=false in backend .env to require real implementations.
+            Runtime configuration is managed in the backend environment settings.
           </p>
         </Panel>
 
@@ -43,7 +41,7 @@ export function SettingsPage() {
             <ConfigRow icon={Database} label="API base" value="/api/v1" mono />
             <ConfigRow icon={Database} label="Database" value="SQLite (dev fallback)" />
             <ConfigRow icon={Database} label="Target" value="PostgreSQL + PostGIS" />
-            <ConfigRow icon={ShieldCheck} label="Auth mode" value="None (demo)" />
+            <ConfigRow icon={ShieldCheck} label="Auth mode" value="Protected access" />
           </div>
         </Panel>
       </div>

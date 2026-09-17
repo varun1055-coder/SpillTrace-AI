@@ -54,4 +54,4 @@ class DashboardOut(BaseModel):
     system_status: str
     api_status: str
     data_timestamp: datetime
-    is_demo_data: bool = True
+    is_seed_data: bool = False

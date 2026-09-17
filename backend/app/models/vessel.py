@@ -33,7 +33,7 @@ class Vessel(Base):
     current_heading = Column(Float, default=119.0)
     nav_status = Column(String(64), default="Under way using engine")
     
-    is_simulated = Column(Boolean, default=True) # All demo vessels explicitly flagged
+    is_simulated = Column(Boolean, default=True) # All local reference vessels explicitly flagged
 
     # Relationships
     trajectories = relationship("VesselTrajectoryPoint", back_populates="vessel", cascade="all, delete-orphan")

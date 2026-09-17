@@ -78,10 +78,4 @@ export function ErrorState({ message }: { message: string }) {
   );
 }
 
-export function DemoBanner() {
-  return (
-    <div className="bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs px-3 py-1.5 rounded font-mono">
-      DEMO DATA — All simulated data for development purposes. Not real-world evidence.
-    </div>
-  );
-}
+

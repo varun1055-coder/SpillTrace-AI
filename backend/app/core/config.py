@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     ENVIRONMENT: str = "development"
     DEBUG: bool = True
-    SECRET_KEY: str = "demo-secret-key-change-in-production"
+    SECRET_KEY: str = "replace-me-with-a-secure-secret-key"
     
     # Database: Defaults to SQLite with PostGIS-ready schema abstractions
     DATABASE_URL: str = "sqlite:///./spilltrace.db"
@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     ]
 
     # AI & Service Mock Flags
-    USE_MOCK_MODELS: bool = True
+    USE_MOCK_MODELS: bool = False
     SENTINEL_API_KEY: str = ""
     SPIRE_AIS_API_KEY: str = ""
 

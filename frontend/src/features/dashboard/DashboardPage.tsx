@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { api } from '../../services/api';
-import { KPICard, DemoBanner, LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
+import { KPICard, LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
 import { MaritimeMap } from '../../components/map/MaritimeMap';
 import { Badge, statusVariant } from '../../components/ui/Badge';
 
@@ -13,8 +13,6 @@ export function DashboardPage() {
 
   return (
     <div className="p-6 space-y-6">
-      <DemoBanner />
-
       <div className="space-y-1">
         <h2 className="text-xl font-bold text-white">SpillTrace AI</h2>
         <p className="text-sm text-accent">From Oil Spill Detection to Intelligent Vessel Attribution</p>
@@ -44,7 +42,7 @@ export function DashboardPage() {
             <div className="space-y-2 text-sm">
               <StatusRow label="System" value={data.system_status} ok />
               <StatusRow label="API" value={data.api_status} ok />
-              <StatusRow label="Data Mode" value="Demo / Simulated" />
+              <StatusRow label="Data Mode" value="Operational" />
               <p className="font-mono text-[10px] text-text-muted pt-+2">
                 Last sync: {new Date(data.data_timestamp).toLocaleString()} UTC
               </p>

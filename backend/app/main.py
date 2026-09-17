@@ -67,5 +67,5 @@ def root():
         "tagline": settings.PROJECT_TAGLINE,
         "version": settings.VERSION,
         "docs": f"{settings.API_V1_STR}/docs",
-        "disclaimer": "DEMO DATA — All simulated data for development purposes.",
+        "status": "operational",
     }

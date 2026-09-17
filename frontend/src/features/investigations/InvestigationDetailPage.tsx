@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { api } from '../../services/api';
-import { DemoBanner, LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
+import { LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
 import { Badge, statusVariant } from '../../components/ui/Badge';
 import { WorkflowSteps } from '../../components/investigation/WorkflowSteps';
 import { MaritimeMap, buildDriftGeoJson } from '../../components/map/MaritimeMap';
@@ -52,8 +52,6 @@ export function InvestigationDetailPage() {
 
   return (
     <div className="p-6 space-y-4">
-      <DemoBanner />
-
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="font-mono text-accent text-sm">{inv.reference_code}</p>

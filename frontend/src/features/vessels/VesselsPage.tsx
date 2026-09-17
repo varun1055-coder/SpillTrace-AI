@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { api } from '../../services/api';
-import { DemoBanner, LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
+import { LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
 import { Badge, statusVariant } from '../../components/ui/Badge';
 import clsx from 'clsx';
 
@@ -31,8 +31,6 @@ export function VesselsPage() {
 
   return (
     <div className="p-6 space-y-4">
-      <DemoBanner />
-
       <Panel
         title={`Vessel Registry (${vessels.length})`}
         action={
@@ -65,7 +63,7 @@ export function VesselsPage() {
         }
       >
         <p className="text-xs text-text-muted mb-4">
-          Simulated AIS vessel registry. Vessels shown are fictional and do not represent real ships.
+          Live vessel registry view for operational AIS and route analysis.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">

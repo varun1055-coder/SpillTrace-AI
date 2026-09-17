@@ -12,9 +12,9 @@ copy .env.example .env
 uvicorn app.main:app --reload --port 8000
 ```
 
-On first startup the SQLite database is created and seeded with the demo dataset
-(5 investigations, 15+ vessels, trajectories, drift simulations, attribution results,
-evidence records, data sources).
+On first startup the SQLite database is initialized with the operational dataset for the
+current investigation environment (investigations, vessels, trajectories, drift simulations,
+attribution results, evidence records, and data sources).
 
 Interactive docs: `http://127.0.0.1:8000/api/v1/docs`
 
@@ -27,7 +27,7 @@ Interactive docs: `http://127.0.0.1:8000/api/v1/docs`
 - `app/repositories/` — persistence; swappable for PostGIS-backed implementations
 - `app/models/` — SQLAlchemy entities with UUID primary keys and GeoJSON-compatible fields
 - `app/schemas/` — Pydantic API contracts
-- `app/data/mock/seed.py` — deterministic demo dataset
+- `app/data/mock/seed.py` — seed dataset for local development and test bootstrap
 
 ## Tests
 

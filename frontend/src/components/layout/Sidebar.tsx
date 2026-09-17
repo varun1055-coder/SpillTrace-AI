@@ -68,10 +68,10 @@ export function Sidebar() {
         </div>
         <div className="flex items-center gap-2 pt-2 border-t border-panel-border">
           <div className="w-7 h-7 rounded-full bg-navy-600 flex items-center justify-center text-xs font-medium text-accent">
-            DA
+            SA
           </div>
           <div>
-            <p className="text-xs font-medium text-text">Demo Analyst</p>
+            <p className="text-xs font-medium text-text">Analyst</p>
             <p className="text-[10px] text-text-muted">Forensic Intelligence</p>
           </div>
         </div>

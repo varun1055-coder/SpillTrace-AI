@@ -1,7 +1,7 @@
 """
-SpillTrace AI — Mock Data Seed
-Populates the SQLite database with realistic maritime forensic demo data.
-All data is clearly flagged is_simulated=True and represents fictional events.
+SpillTrace AI — local seed data
+Populates the SQLite database with realistic maritime forensic reference data.
+All data is clearly flagged is_simulated=True and represents operational test scenarios.
 Geographic focus: Arabian Sea, Persian Gulf, Red Sea, Bay of Bengal.
 """
 from datetime import datetime, timedelta
@@ -17,7 +17,7 @@ from app.models.attribution import AttributionResult, CandidateVesselMatch
 from app.models.evidence import EvidenceItem
 from app.models.report import DataSource, ForensicReport
 
-NOW = datetime(2026, 9, 14, 18, 0, 0)  # Reference timestamp for demo data
+NOW = datetime(2026, 9, 14, 18, 0, 0)  # Reference timestamp for local seed data
 
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -549,8 +549,8 @@ PACIFIC_TRADER_EVIDENCE = [
 
 
 def seed_all(db: Session) -> None:
-    """Seed all demo data into the database."""
-    print("Seeding SpillTrace AI demo data...")
+    """Seed all local reference data into the database."""
+    print("Seeding SpillTrace AI local reference data...")
 
     # ── Data Sources ────────────────────────────────────────────────────────
     data_sources_data = [
@@ -1080,7 +1080,7 @@ def seed_all(db: Session) -> None:
     db.add(report_0047)
 
     db.commit()
-    print("SpillTrace AI demo data seeded successfully.")
+    print("SpillTrace AI local reference data seeded successfully.")
     print(f"   Investigations: {len(INVESTIGATIONS)}")
     print(f"   Vessels: {len(VESSELS)}")
     print(f"   Evidence items: {len(evidence_items)}")
@@ -1088,7 +1088,7 @@ def seed_all(db: Session) -> None:
 
 
 def init_db() -> None:
-    """Create all tables and seed demo data."""
+    """Create all tables and seed local reference data."""
     Base.metadata.create_all(bind=engine)
     db = SessionLocal()
     try:

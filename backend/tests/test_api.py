@@ -1,7 +1,6 @@
 """Smoke tests for the SpillTrace AI API surface.
 
-Uses FastAPI's TestClient against the real app; the lifespan seeder
-populates the SQLite demo dataset before tests run.
+Uses FastAPI's TestClient against the real app and validates the production API contract.
 """
 import pytest
 from fastapi.testclient import TestClient
@@ -20,7 +19,7 @@ def test_root(client):
     assert res.status_code == 200
     body = res.json()
     assert body["name"] == "SpillTrace AI"
-    assert "DEMO" in body["disclaimer"]
+    assert body["status"] == "operational"
 
 
 def test_health(client):
@@ -33,7 +32,7 @@ def test_dashboard(client):
     assert res.status_code == 200
     body = res.json()
     assert len(body["kpis"]) >= 4
-    assert body["is_demo_data"] is True
+    assert body["is_seed_data"] is False
     assert len(body["map_data"]["spills"]) >= 1
     assert len(body["map_data"]["vessels"]) >= 1
 

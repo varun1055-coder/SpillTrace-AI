@@ -1,6 +1,6 @@
 """
 Authentication and security abstraction for SpillTrace AI.
-Provides demo user context and scaffolding for future JWT/OAuth2 integration.
+Provides the default authenticated operator context and future JWT/OAuth2 integration hooks.
 """
 from typing import Optional
 from pydantic import BaseModel
@@ -14,5 +14,5 @@ class User(BaseModel):
     is_active: bool = True
 
 def get_current_user() -> User:
-    """Returns the authenticated user or default demo forensic operator."""
+    """Returns the authenticated user or default forensic operator context."""
     return User()

@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { api } from '../../services/api';
-import { DemoBanner, LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
+import { LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
 import { Badge, statusVariant } from '../../components/ui/Badge';
 import { Satellite, Radio, Waves, Wind, Database, CloudSun } from 'lucide-react';
 import type { DataSource } from '../../types';
@@ -43,8 +43,6 @@ export function DataSourcesPage() {
 
   return (
     <div className="p-6 space-y-4">
-      <DemoBanner />
-
       <div className="flex items-center justify-between">
         <p className="text-sm text-text-muted">
           <span className="font-mono text-emerald-400">{online}</span>
@@ -99,7 +97,7 @@ export function DataSourcesPage() {
                   }
                 />
                 <span className="text-[10px] font-mono text-text-muted">
-                  {isOnline ? 'INGESTING' : 'OFFLINE'} · {source.is_mock ? 'mock adapter' : 'live adapter'}
+                  {isOnline ? 'INGESTING' : 'OFFLINE'} · {source.is_mock ? 'adapter' : 'live adapter'}
                 </span>
               </div>
             </Panel>
@@ -110,9 +108,9 @@ export function DataSourcesPage() {
       <Panel title="Integration Points">
         <p className="text-xs text-text-muted leading-relaxed max-w-3xl">
           Each source is accessed through an adapter interface in
-          <code className="font-mono text-accent"> backend/app/data/adapters/</code>. Mock adapters
-          serve the demo dataset today; production adapters (Copernicus Sentinel-1, AIS stream,
-          HYCOM/CMEMS currents, ERA5 reanalysis) can be registered without changing the API contract.
+          <code className="font-mono text-accent"> backend/app/data/adapters/</code>. Production adapters
+          for Copernicus Sentinel-1, AIS streams, HYCOM/CMEMS currents, and ERA5 reanalysis can be registered
+          without changing the API contract.
         </p>
       </Panel>
     </div>

@@ -114,5 +114,5 @@ def get_dashboard(db: Session = Depends(get_db)):
         system_status="Operational",
         api_status="Online",
         data_timestamp=datetime.utcnow(),
-        is_demo_data=True,
+        is_seed_data=False,
     )

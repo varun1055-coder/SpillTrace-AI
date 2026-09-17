@@ -246,7 +246,7 @@ export interface Dashboard {
   system_status: string;
   api_status: string;
   data_timestamp: string;
-  is_demo_data: boolean;
+  is_seed_data: boolean;
 }
 
 export const WORKFLOW_STAGES = [

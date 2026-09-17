@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
-import { DemoBanner, LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
+import { LoadingState, ErrorState, Panel } from '../../components/ui/Panel';
 import { MaritimeMap } from '../../components/map/MaritimeMap';
 import { Badge } from '../../components/ui/Badge';
 import type { FeatureCollection, Feature } from 'geojson';
@@ -66,7 +66,6 @@ export function MaritimeMapPage() {
   return (
     <div className="h-full flex flex-col">
       <div className="px-6 pt-4 pb-3 flex flex-wrap items-center justify-between gap-3">
-        <DemoBanner />
         <div className="flex items-center gap-2">
           <FilterGroup
             label="Vessels"

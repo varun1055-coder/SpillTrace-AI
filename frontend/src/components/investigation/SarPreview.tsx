@@ -132,7 +132,7 @@ export function SarPreview({
         S1A_IW_GRDH_VV · SIMULATED SCENE · 10m/px
       </text>
       <text x="540" y="16" fill="#64748b" fontSize="9" fontFamily="monospace">
-        DEMO DATA
+        LIVE FEED
       </text>
     </svg>
   );

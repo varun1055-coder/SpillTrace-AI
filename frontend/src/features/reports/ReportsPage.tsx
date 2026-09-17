@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { api } from '../../services/api';
-import { DemoBanner, LoadingState, Panel, ScoreBar } from '../../components/ui/Panel';
+import { LoadingState, Panel, ScoreBar } from '../../components/ui/Panel';
 import { Badge, statusVariant } from '../../components/ui/Badge';
 import { FileText, FileDown } from 'lucide-react';
 
@@ -71,8 +71,6 @@ export function ReportsPage() {
 
   return (
     <div className="p-6 space-y-4">
-      <DemoBanner />
-
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <label className="text-xs text-text-muted">Investigation:</label>
